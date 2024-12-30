@@ -538,10 +538,10 @@ require('lazy').setup({
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
-        --
+
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
-        eslint = {},
+        -- ts_ls = {},
+        -- eslint = {},
         --
 
         lua_ls = {
@@ -591,6 +591,11 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
+  },
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
